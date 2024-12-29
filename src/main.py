@@ -1,7 +1,9 @@
 from textnode import TextType,TextNode
-from htmlnode import HTMLNode
+from htmlnode import HTMLNode,LeafNode,ParentNode
+from inline_markdown import split_nodes_delimiter
+from block_markdown import markdown_to_blocks
+from copy_source_to_dest import copy_source_to_dest
 def main():
-    new_node = TextNode("this is some text!",TextType.Normal)
-    print (new_node)
+    copy_source_to_dest("static","public")
 
 main()

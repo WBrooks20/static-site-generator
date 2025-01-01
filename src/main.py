@@ -1,9 +1,7 @@
-from textnode import TextType,TextNode
-from htmlnode import HTMLNode,LeafNode,ParentNode
-from inline_markdown import split_nodes_delimiter
-from block_markdown import markdown_to_blocks
 from copy_source_to_dest import copy_source_to_dest
+from page_generator import generate_pages_recursive
+import os
 def main():
     copy_source_to_dest("static","public")
-
+    generate_pages_recursive("content","template.html","public")
 main()

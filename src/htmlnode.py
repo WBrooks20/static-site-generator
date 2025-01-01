@@ -44,7 +44,7 @@ class ParentNode(HTMLNode):
         for child in self.children:
             #if the child of the parent node is itself a parent node we need to recursively call to_html()(the parent node method) to create its own html string, recursively append the to_html method results of its child nodes to its html string, and return its html_string to be appended to the previous calls html string. 
             #if the child of the parent node is a leaf node then it calls to_html(the leaf node method) to format the leafnodes data and appends that to the html_string of the current function call. 
-            html_string += child.to_html()
+            html_string += child.to_html().strip()
         html_string += f"</{self.tag}>"
         return html_string
     def __repr__(self):
